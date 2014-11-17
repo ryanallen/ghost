@@ -34,9 +34,11 @@
 .main-nav {
     background-color: rgba(50, 58, 69, 0.95);
     height: 60px;
+    left: 0;
     margin: 0;
     padding: 1em 0 0;
     position: fixed;
+    top: 0;
     width: 100%;
     z-index: 1;
 }
@@ -90,3 +92,31 @@
     padding: 1px 0 5px 0;
     width: auto;
 }
+
+// **********************************
+// *** BLOG TITLE AND DESCRIPTION ***
+// **********************************
+
+    /* The details of your blog. Defined in ghost/settings/ */
+    .page-title {
+        margin: 10px 0 10px 0;
+        font-size: 6.5em;
+        letter-spacing: -1px;
+        font-weight: 700;
+        font-family: "Open Sans", sans-serif;
+        color: $white;
+    }
+
+    .page-description {
+        margin: 1em 0 0;
+        font-size: 3rem;
+        line-height: 1.5em;
+        font-weight: 300;
+        font-family: "Merriweather", serif;
+        letter-spacing: 0.01rem;
+        color: $white;
+    }
+
+    .logo {
+        height: 300px;
+    }

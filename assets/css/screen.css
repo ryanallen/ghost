@@ -189,9 +189,11 @@ table {
 .main-nav {
   background-color: rgba(50, 58, 69, 0.95);
   height: 60px;
+  left: 0;
   margin: 0;
   padding: 1em 0 0;
   position: fixed;
+  top: 0;
   width: 100%;
   z-index: 1; }
 
@@ -239,6 +241,27 @@ table {
   height: 38px;
   padding: 1px 0 5px 0;
   width: auto; }
+
+/* The details of your blog. Defined in ghost/settings/ */
+.page-title {
+  margin: 10px 0 10px 0;
+  font-size: 6.5em;
+  letter-spacing: -1px;
+  font-weight: 700;
+  font-family: "Open Sans", sans-serif;
+  color: #ffffff; }
+
+.page-description {
+  margin: 1em 0 0;
+  font-size: 3rem;
+  line-height: 1.5em;
+  font-weight: 300;
+  font-family: "Merriweather", serif;
+  letter-spacing: 0.01rem;
+  color: #ffffff; }
+
+.logo {
+  height: 300px; }
 
 .back-button {
   -webkit-box-sizing: border-box;
@@ -888,24 +911,6 @@ margin on the iframe, cause it breaks stuff. */
 .vertical {
   display: table-cell;
   vertical-align: middle; }
-
-/* The details of your blog. Defined in ghost/settings/ */
-.page-title {
-  margin: 10px 0 10px 0;
-  font-size: 5rem;
-  letter-spacing: -1px;
-  font-weight: 700;
-  font-family: "Open Sans", sans-serif;
-  color: #fff; }
-
-.page-description {
-  margin: 0;
-  font-size: 2rem;
-  line-height: 1.5em;
-  font-weight: 400;
-  font-family: "Merriweather", serif;
-  letter-spacing: 0.01rem;
-  color: rgba(255, 255, 255, 0.8); }
 
 /* Add subtle load-in animation for content on the home page */
 .home-template .page-title {
