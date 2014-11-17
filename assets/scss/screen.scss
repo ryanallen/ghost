@@ -102,7 +102,8 @@
 // ==========================================================================
 // 1 Variables and Imports
 // ==========================================================================
-
+    
+    @import 'variables';
     @import 'head';
     @import 'buttons';
     @import 'media-queries';
@@ -187,7 +188,7 @@
         letter-spacing: 0.01rem;
         font-size: 1.8rem;
         line-height: 1.75em;
-        color: #3A4145;
+        color: $blue-dark;
         -webkit-font-feature-settings: 'kern' 1;
         -moz-font-feature-settings: 'kern' 1;
         -o-font-feature-settings: 'kern' 1;
@@ -206,7 +207,7 @@
         -webkit-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
         -moz-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
         -o-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
-        color: #2E2E2E;
+        color: #e74c3b;
         line-height: 1.15em;
         margin: 0 0 0.4em 0;
         font-family: "Open Sans", sans-serif;
@@ -240,12 +241,12 @@
     }
 
     a {
-        color: #4A4A4A;
+        color: $red;
         transition: color ease 0.3s;
     }
 
     a:hover {
-        color: #111;
+        color: $blue-light;
     }
 
     p, ul, ol, dl {
@@ -561,7 +562,7 @@
         font-family: "Open Sans", sans-serif;
         font-size: 1.5rem;
         line-height: 2.2rem;
-        color: #9EABB3;
+        color: $blue-light;
     }
 
     .author-thumb {
@@ -573,11 +574,12 @@
     }
 
     .post-meta a {
-        color: #9EABB3;
+        color: $blue-light;
         text-decoration: none;
     }
 
     .post-meta a:hover {
+        color: $red;
         text-decoration: underline;
     }
 
@@ -718,11 +720,11 @@
         font-size: 1.4rem;
         line-height: 1;
         font-style: italic;
-        color: #9EABB3;
+        color: $blue-light;
     }
 
     .author-meta a {
-        color: #9EABB3;
+        color: $blue-light;
     }
     .author-meta a:hover {
         color: #111;
@@ -1002,12 +1004,12 @@
         margin: 4rem auto;
         font-family: "Open Sans", sans-serif;
         font-size: 1.3rem;
-        color: #9EABB3;
+        color: $blue-light;
         text-align: center;
     }
 
     .pagination a {
-        color: #9EABB3;
+        color: $blue-light;
         transition: all 0.2s ease;
     }
 
