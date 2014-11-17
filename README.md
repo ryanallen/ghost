@@ -1,0 +1,4 @@
+ghost
+=====
+
+DG Ghost Theme
