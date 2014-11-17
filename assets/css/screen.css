@@ -294,15 +294,16 @@ table {
 .back-button:hover,
 .subscribe-button:hover {
   border-color: #bfc8cd;
-  color: #9EABB3; }
+  background: #e84b3c;
+  color: #ffffff; }
 
 @media only screen and (min-width: 900px) {
   .subscribe-button {
-    margin-right: 20px; } }
-@media only screen and (max-width: 900px) {
-  .main-nav {
-    padding: 15px; }
+    margin-right: 20px; }
 
+  .blog-logo {
+    margin-left: 20px; } }
+@media only screen and (max-width: 900px) {
   blockquote {
     margin-left: 0; }
 
@@ -390,7 +391,10 @@ table {
     padding: 0; }
 
   .no-cover.author-head.main-header {
-    padding: 0; } }
+    padding: 0; }
+
+  .subscribe-button {
+    margin-right: 40px; } }
 @media only screen and (max-width: 500px) {
   .main-header {
     margin-bottom: 15px;
@@ -404,11 +408,6 @@ table {
     min-height: 160px;
     padding: 10% 0; }
 
-  .main-nav {
-    padding: 0;
-    margin-bottom: 2rem;
-    border-bottom: #e0e4e7 1px solid; }
-
   .blog-logo {
     padding: 10px 10px; }
 
@@ -421,35 +420,20 @@ table {
     line-height: 41px;
     border-radius: 0;
     color: #2e2e2e;
-    background: transparent; }
+    background: transparent;
+    margin-right: 30px; }
 
   .back-button:hover,
   .subscribe-button:hover {
-    border-color: #ebeef0;
-    color: #2e2e2e;
-    background: #ebeef0; }
+    border-color: #bfc8cd;
+    background: #e84b3c;
+    color: #ffffff; }
 
   .back-button {
     padding: 0 15px 0 10px; }
 
   .subscribe-button {
     padding: 0 12px; }
-
-  .main-nav.overlay a:hover {
-    color: #fff;
-    border-color: transparent;
-    background: transparent; }
-
-  .no-cover .main-nav.overlay {
-    background: none; }
-
-  .no-cover .main-nav.overlay .back-button,
-  .no-cover .main-nav.overlay .subscribe-button {
-    border: none; }
-
-  .main-nav.overlay .back-button,
-  .main-nav.overlay .subscribe-button {
-    border-color: transparent; }
 
   .blog-logo img {
     max-height: 80px; }
