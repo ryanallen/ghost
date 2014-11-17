@@ -5,7 +5,7 @@
 /*
 
     0.  Normalize
-    1.  Variables
+    1.  Variables and Imports
     2.  Icons
     3.  General
     4.  Utilities
@@ -100,8 +100,10 @@
     table { border-collapse: collapse; border-spacing: 0; }
 
 // ==========================================================================
-// 1 Variables
+// 1 Variables and Imports
 // ==========================================================================
+
+    @import 'main-nav';
 
 // ==========================================================================
 // 2. Icons - Sets up the icon font and respective classes
@@ -484,25 +486,6 @@
 
     .main-header .inner {
         width: 80%;
-    }
-
-    .main-nav {
-        position: relative;
-        padding: 35px 40px;
-        margin: 0 0 30px 0;
-    }
-
-    .main-nav--top-bar {
-        background-color: rgba(50, 58, 69, 0.9);
-        border-bottom: 1px dashed rgb(56, 66, 70);
-        height: 60px;
-        left: 0;
-        margin: 0;
-        padding: 1em 0 0;
-        position: fixed;
-        top: 0;
-        width: 100%;
-        z-index: 1;
     }
 
     .main-nav a {
