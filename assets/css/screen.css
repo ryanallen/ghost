@@ -264,6 +264,9 @@ table {
   margin-top: 4.5em;
   height: 300px; }
 
+.content {
+  margin: 3rem 0 0; }
+
 .back-button {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
