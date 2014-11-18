@@ -1053,6 +1053,9 @@ body:not(.post-template) .post-title {
   font-size: 1.4rem;
   line-height: 1.5em; }
 
+.twitter-logo {
+  height: .7em; }
+
 .post-template .post-header {
   margin-bottom: 3.4rem; }
 
