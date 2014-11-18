@@ -1,8 +1,8 @@
 // ==========================================================================
-// Media Queries > 900px
+// Media Queries > 1225px
 // ==========================================================================
 
-    @media only screen and (min-width: 900px) {
+    @media only screen and (min-width: 1225px) {
         
         .subscribe-button {
             margin-right: 20px;
@@ -10,6 +10,30 @@
 
         .blog-logo {
             margin-left: 20px;
+        }
+
+    }
+
+// ==========================================================================
+// Media Queries < 1225px
+// ==========================================================================
+
+    @media only screen and (max-width: 1225px) {
+        
+        .subscribe-button {
+            margin-right: 20px;
+        }
+
+        .blog-logo {
+            margin-left: 20px;
+        }
+
+        .page-title {
+            font-size: 5.5em;
+        }
+
+        .logo {
+            height: 220px;
         }
     }
 
@@ -134,6 +158,10 @@
         .subscribe-button {
             margin-right: 40px;
         }
+
+        .logo {
+        height: 200px;
+    }
 
     }
 
@@ -373,4 +401,7 @@
             display: none;
         }
 
+        .logo {
+            height: 100px;
+        }
     }

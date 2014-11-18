@@ -179,7 +179,7 @@ table {
   overflow: hidden; }
 
 .main-header .inner {
-  width: 80%; }
+  width: 90%; }
 
 .no-cover.main-header {
   min-height: 160px;
@@ -252,7 +252,7 @@ table {
   color: #ffffff; }
 
 .page-description {
-  margin: 1em 0 0;
+  margin: 1em 0;
   font-size: 3rem;
   line-height: 1.5em;
   font-weight: 300;
@@ -261,6 +261,7 @@ table {
   color: #ffffff; }
 
 .logo {
+  margin-top: 4.5em;
   height: 300px; }
 
 .back-button {
@@ -319,12 +320,24 @@ table {
   background: #e84b3c;
   color: #ffffff; }
 
-@media only screen and (min-width: 900px) {
+@media only screen and (min-width: 1225px) {
   .subscribe-button {
     margin-right: 20px; }
 
   .blog-logo {
     margin-left: 20px; } }
+@media only screen and (max-width: 1225px) {
+  .subscribe-button {
+    margin-right: 20px; }
+
+  .blog-logo {
+    margin-left: 20px; }
+
+  .page-title {
+    font-size: 5.5em; }
+
+  .logo {
+    height: 220px; } }
 @media only screen and (max-width: 900px) {
   blockquote {
     margin-left: 0; }
@@ -416,7 +429,10 @@ table {
     padding: 0; }
 
   .subscribe-button {
-    margin-right: 40px; } }
+    margin-right: 40px; }
+
+  .logo {
+    height: 200px; } }
 @media only screen and (max-width: 500px) {
   .main-header {
     margin-bottom: 15px;
@@ -602,7 +618,10 @@ table {
     font-size: 1.4rem; }
 
   .archive-template .main-header .page-description {
-    display: none; } }
+    display: none; }
+
+  .logo {
+    height: 100px; } }
 /* Import the font file with the icons in it */
 @font-face {
   font-family: "casper-icons";

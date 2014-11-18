@@ -17,7 +17,7 @@
 
 // Container
 .main-header .inner {
-    width: 80%;
+    width: 90%;
 }
 
 .no-cover.main-header {
@@ -108,7 +108,7 @@
     }
 
     .page-description {
-        margin: 1em 0 0;
+        margin: 1em 0;
         font-size: 3rem;
         line-height: 1.5em;
         font-weight: 300;
@@ -118,5 +118,6 @@
     }
 
     .logo {
+        margin-top: 4.5em;
         height: 300px;
     }
