@@ -4,7 +4,7 @@
 /*
 
     0.  Normalize
-    1.  Variables
+    1.  Variables and Imports
     2.  Icons
     3.  General
     4.  Utilities
@@ -167,58 +167,6 @@ table {
   border-collapse: collapse;
   border-spacing: 0; }
 
-/* Import the font file with the icons in it */
-@font-face {
-  font-family: "casper-icons";
-  src: url("../fonts/casper-icons.eot");
-  src: url("../fonts/casper-icons.eot?#iefix") format("embedded-opentype"), url("../fonts/casper-icons.woff") format("woff"), url("../fonts/casper-icons.ttf") format("truetype"), url("../fonts/casper-icons.svg#icons") format("svg");
-  font-weight: normal;
-  font-style: normal; }
-/* Apply these base styles to all icons */
-[class^="icon-"]:before, [class*=" icon-"]:before {
-  font-family: "casper-icons", "Open Sans", sans-serif;
-  speak: none;
-  font-style: normal;
-  font-weight: normal;
-  font-variant: normal;
-  text-transform: none;
-  line-height: 1;
-  text-decoration: none !important;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
-
-/* Each icon is created by inserting the correct character into the
-   content of the :before pseudo element. Like a boss. */
-.icon-ghost:before {
-  content: "\f600"; }
-
-.icon-feed:before {
-  content: "\f601"; }
-
-.icon-twitter:before {
-  content: "\f602";
-  font-size: 1.1em; }
-
-.icon-google-plus:before {
-  content: "\f603"; }
-
-.icon-facebook:before {
-  content: "\f604"; }
-
-.icon-arrow-left:before {
-  content: "\f605"; }
-
-.icon-stats:before {
-  content: "\f606"; }
-
-.icon-location:before {
-  content: "\f607";
-  margin-left: -3px;
-  /* Tracking fix */ }
-
-.icon-link:before {
-  content: "\f608"; }
-
 html {
   height: 100%;
   max-height: 100%;
@@ -232,7 +180,7 @@ body {
   letter-spacing: 0.01rem;
   font-size: 1.8rem;
   line-height: 1.75em;
-  color: #3A4145;
+  color: #323a45;
   -webkit-font-feature-settings: 'kern' 1;
   -moz-font-feature-settings: 'kern' 1;
   -o-font-feature-settings: 'kern' 1; }
@@ -248,7 +196,7 @@ h4, h5, h6 {
   -webkit-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
   -moz-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
   -o-font-feature-settings: 'dlig' 1, 'liga' 1, 'lnum' 1, 'kern' 1;
-  color: #2E2E2E;
+  color: #e74c3b;
   line-height: 1.15em;
   margin: 0 0 0.4em 0;
   font-family: "Open Sans", sans-serif; }
@@ -275,11 +223,11 @@ h6 {
   font-size: 2rem; }
 
 a {
-  color: #4A4A4A;
+  color: #e84c3c;
   transition: color ease 0.3s; }
 
 a:hover {
-  color: #111; }
+  color: #9EABB3; }
 
 p, ul, ol, dl {
   -webkit-font-feature-settings: 'liga' 1, 'onum' 1, 'kern' 1;
@@ -328,8 +276,9 @@ blockquote {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   margin: 1.75em 0 1.75em -2.2em;
-  padding: 0 0 0 1.75em;
-  border-left: #4A4A4A 0.4em solid; }
+  padding: 1em;
+  border-left: #4A4A4A 0.4em solid;
+  background-color: #dde5e9; }
 
 blockquote p {
   margin: 0.8em 0;
@@ -447,37 +396,6 @@ margin on the iframe, cause it breaks stuff. */
 .fluid-width-video-wrapper iframe {
   margin: 0; }
 
-/* Clears shit */
-.clearfix:before,
-.clearfix:after {
-  content: " ";
-  display: table; }
-
-.clearfix:after {
-  clear: both; }
-
-.clearfix {
-  *zoom: 1; }
-
-/* Hides shit */
-.hidden {
-  text-indent: -9999px;
-  visibility: hidden;
-  display: none; }
-
-/* Creates a responsive wrapper that makes our content scale nicely */
-.inner {
-  position: relative;
-  width: 80%;
-  max-width: 710px;
-  margin: 0 auto; }
-
-/* Centres vertically yo. (IE8+) */
-.vertical {
-  display: table-cell;
-  vertical-align: middle; }
-
-/* Big cover image on the home page */
 .main-header {
   position: relative;
   display: table;
@@ -490,12 +408,23 @@ margin on the iframe, cause it breaks stuff. */
   overflow: hidden; }
 
 .main-header .inner {
-  width: 80%; }
+  width: 90%; }
+
+.no-cover.main-header {
+  min-height: 160px;
+  max-height: 40%;
+  background: #f5f8fa; }
 
 .main-nav {
-  position: relative;
-  padding: 35px 40px;
-  margin: 0 0 30px 0; }
+  background-color: rgba(50, 58, 69, 0.95);
+  height: 60px;
+  left: 0;
+  margin: 0;
+  padding: 1em 0 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1; }
 
 .main-nav a {
   text-decoration: none;
@@ -526,31 +455,7 @@ margin on the iframe, cause it breaks stuff. */
   -webkit-animation: none;
   animation: none; }
 
-/* Put a semi-opaque radial gradient behind the icon to make it more visible
-   on photos which happen to have a light background. */
-.home-template .main-header:after {
-  display: block;
-  content: " ";
-  width: 150px;
-  height: 130px;
-  border-radius: 100%;
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  margin-left: -75px;
-  background: -moz-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.15) 0%, transparent 70%, transparent 100%);
-  background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(0, 0, 0, 0.15)), color-stop(70%, transparent), color-stop(100%, transparent));
-  background: -webkit-radial-gradient(center, ellipse cover, rgba(0, 0, 0, 0.15) 0%, transparent 70%, transparent 100%);
-  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.15) 0%, transparent 70%, transparent 100%); }
-
-/* Hide when there's no cover image or on page2+ */
-.no-cover .scroll-down,
-.no-cover.main-header:after,
-.archive-template .scroll-down,
-.archive-template .main-header:after {
-  display: none; }
-
-/* Appears in the top right corner of your home page */
+/* Appears in the top left corner of your home page */
 .blog-logo {
   display: block;
   float: left;
@@ -565,6 +470,31 @@ margin on the iframe, cause it breaks stuff. */
   height: 38px;
   padding: 1px 0 5px 0;
   width: auto; }
+
+/* The details of your blog. Defined in ghost/settings/ */
+.page-title {
+  margin: 10px 0 10px 0;
+  font-size: 6.5em;
+  letter-spacing: -1px;
+  font-weight: 700;
+  font-family: "Open Sans", sans-serif;
+  color: #ffffff; }
+
+.page-description {
+  margin: 1em 0;
+  font-size: 3rem;
+  line-height: 1.5em;
+  font-weight: 300;
+  font-family: "Merriweather", serif;
+  letter-spacing: 0.01rem;
+  color: #ffffff; }
+
+.logo {
+  margin-top: 4.5em;
+  height: 300px; }
+
+.content {
+  margin: 3rem 0 0; }
 
 .back-button {
   -webkit-box-sizing: border-box;
@@ -582,7 +512,8 @@ margin on the iframe, cause it breaks stuff. */
   line-height: 35px;
   border-radius: 3px;
   background: rgba(0, 0, 0, 0.1);
-  transition: all ease 0.3s; }
+  transition: all ease 0.3s;
+  margin-left: 30px; }
 
 .back-button:before {
   position: relative;
@@ -614,76 +545,395 @@ margin on the iframe, cause it breaks stuff. */
   font-size: 9px;
   margin-right: 6px; }
 
-/* Special styles when overlaid on an image*/
-.main-nav.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 70px;
-  border: none;
-  background: -moz-linear-gradient(top, rgba(0, 0, 0, 0.2) 0%, transparent 100%);
-  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(0, 0, 0, 0.2)), color-stop(100%, transparent));
-  background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0.2) 0%, transparent 100%);
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.2) 0%, transparent 100%); }
-
-.no-cover .main-nav.overlay,
-.no-cover .back-button,
-.no-cover .subscribe-button {
-  background: none; }
-
-.main-nav.overlay a {
-  color: #fff; }
-
-.main-nav.overlay .back-button,
-.main-nav.overlay .subscribe-button {
-  border-color: rgba(255, 255, 255, 0.6); }
-
-.main-nav.overlay a:hover {
-  color: #222;
-  border-color: #fff;
-  background: #fff;
-  transition: all 0.1s ease; }
-
 /* Add a border to the buttons on hover */
 .back-button:hover,
 .subscribe-button:hover {
   border-color: #bfc8cd;
-  color: #9EABB3; }
+  background: #e84b3c;
+  color: #ffffff; }
 
-/* The details of your blog. Defined in ghost/settings/ */
-.page-title {
-  margin: 10px 0 10px 0;
-  font-size: 5rem;
-  letter-spacing: -1px;
-  font-weight: 700;
-  font-family: "Open Sans", sans-serif;
-  color: #fff; }
+@media only screen and (min-width: 1225px) {
+  .subscribe-button {
+    margin-right: 20px; }
 
-.page-description {
-  margin: 0;
-  font-size: 2rem;
-  line-height: 1.5em;
-  font-weight: 400;
-  font-family: "Merriweather", serif;
-  letter-spacing: 0.01rem;
-  color: rgba(255, 255, 255, 0.8); }
+  .blog-logo {
+    margin-left: 20px; } }
+@media only screen and (max-width: 1225px) {
+  .subscribe-button {
+    margin-right: 20px; }
 
-.no-cover.main-header {
-  min-height: 160px;
-  max-height: 40%;
-  background: #f5f8fa; }
+  .blog-logo {
+    margin-left: 20px; }
 
-.no-cover .page-title {
-  color: rgba(0, 0, 0, 0.8); }
+  .page-title {
+    font-size: 5.5em; }
 
-.no-cover .page-description {
-  color: rgba(0, 0, 0, 0.5); }
+  .logo {
+    height: 220px; } }
+@media only screen and (max-width: 900px) {
+  blockquote {
+    margin-left: 0; }
 
-.no-cover .main-nav.overlay .back-button,
-.no-cover .main-nav.overlay .subscribe-button {
-  color: rgba(0, 0, 0, 0.4);
-  border-color: rgba(0, 0, 0, 0.3); }
+  .main-header {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    height: auto;
+    min-height: 240px;
+    height: 60%;
+    padding: 15% 0; }
+
+  .scroll-down,
+  .home-template .main-header:after {
+    display: none; }
+
+  .archive-template .main-header {
+    min-height: 180px;
+    padding: 10% 0; }
+
+  .blog-logo img {
+    padding: 4px 0; }
+
+  .page-title {
+    font-size: 4rem;
+    letter-spacing: -1px; }
+
+  .page-description {
+    font-size: 1.8rem;
+    line-height: 1.5em; }
+
+  .post {
+    font-size: 0.95em; }
+
+  body:not(.post-template) .post-title {
+    font-size: 3.2rem; }
+
+  hr {
+    margin: 2.4em 0; }
+
+  ol, ul {
+    padding-left: 2em; }
+
+  h1 {
+    font-size: 4.5rem;
+    text-indent: -2px; }
+
+  h2 {
+    font-size: 3.6rem; }
+
+  h3 {
+    font-size: 3.1rem; }
+
+  h4 {
+    font-size: 2.5rem; }
+
+  h5 {
+    font-size: 2.2rem; }
+
+  h6 {
+    font-size: 1.8rem; }
+
+  .author-profile {
+    padding-bottom: 4rem; }
+
+  .author-profile .author-bio {
+    font-size: 1.6rem; }
+
+  .author-meta span {
+    display: block;
+    margin: 1.5rem 0; }
+
+  .author-profile .author-meta span {
+    font-size: 1.6rem; }
+
+  .post-head.main-header {
+    height: 45%; }
+
+  .tag-head.main-header,
+  .author-head.main-header {
+    height: 30%; }
+
+  .no-cover.post-head.main-header {
+    height: 55px;
+    padding: 0; }
+
+  .no-cover.author-head.main-header {
+    padding: 0; }
+
+  .subscribe-button {
+    margin-right: 40px; }
+
+  .logo {
+    height: 200px; } }
+@media only screen and (max-width: 500px) {
+  .main-header {
+    margin-bottom: 15px;
+    height: 40%; }
+
+  .no-cover.main-header {
+    height: 30%; }
+
+  .archive-template .main-header {
+    max-height: 20%;
+    min-height: 160px;
+    padding: 10% 0; }
+
+  .blog-logo {
+    padding: 10px 10px; }
+
+  .blog-logo img {
+    height: 26px; }
+
+  .back-button,
+  .subscribe-button {
+    height: 44px;
+    line-height: 41px;
+    border-radius: 0;
+    color: #ffffff;
+    background: #323a45;
+    margin-right: 30px; }
+
+  .back-button:hover,
+  .subscribe-button:hover {
+    border-color: #bfc8cd;
+    background: #e84b3c;
+    color: #ffffff; }
+
+  .back-button {
+    padding: 0 15px 0 10px; }
+
+  .subscribe-button {
+    padding: 0 12px; }
+
+  .blog-logo img {
+    max-height: 80px; }
+
+  .inner,
+  .pagination {
+    width: auto;
+    margin: 2rem auto; }
+
+  .post {
+    width: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    margin-left: 16px;
+    margin-right: 16px;
+    padding-bottom: 2rem;
+    line-height: 1.65em; }
+
+  .post-date {
+    display: none; }
+
+  .post-template .post-header {
+    margin-bottom: 2rem; }
+
+  .post-template .post-date {
+    display: inline-block; }
+
+  hr {
+    margin: 1.75em 0; }
+
+  p, ul, ol, dl {
+    font-size: 0.95em;
+    margin: 0 0 2.5rem 0; }
+
+  .page-title {
+    font-size: 3rem; }
+
+  .post-excerpt p {
+    font-size: 0.85em; }
+
+  .page-description {
+    font-size: 1.6rem; }
+
+  h1, h2, h3,
+  h4, h5, h6 {
+    margin: 0 0 0.3em 0; }
+
+  h1 {
+    font-size: 2.8rem;
+    letter-spacing: -1px; }
+
+  h2 {
+    font-size: 2.4rem;
+    letter-spacing: 0; }
+
+  h3 {
+    font-size: 2.1rem; }
+
+  h4 {
+    font-size: 1.9rem; }
+
+  h5 {
+    font-size: 1.8rem; }
+
+  h6 {
+    font-size: 1.8rem; }
+
+  body:not(.post-template) .post-title {
+    font-size: 2.5rem; }
+
+  .post-template .post {
+    padding-bottom: 0;
+    margin-bottom: 0; }
+
+  .post-template .site-footer {
+    margin-top: 0; }
+
+  .post-content img {
+    padding: 0; }
+
+  .post-content .full-img {
+    width: auto;
+    width: calc(100% + 32px);
+    /* expand with to image + margins */
+    margin: 0 -16px;
+    /* get rid of margins */
+    min-width: 0;
+    max-width: 112%;
+    /* fallback when calc doesn't work */ }
+
+  .post-meta {
+    font-size: 1.3rem;
+    margin-top: 1rem; }
+
+  .post-footer {
+    padding: 5rem 0 3rem 0;
+    text-align: center; }
+
+  .post-footer .author {
+    margin: 0 0 2rem 0;
+    padding: 0 0 1.6rem 0;
+    border-bottom: #EBF2F6 1px dashed; }
+
+  .post-footer .share {
+    position: static;
+    width: auto; }
+
+  .post-footer .share a {
+    margin: 1.4rem 0.8rem 0 0.8rem; }
+
+  .author-meta li {
+    float: none;
+    margin: 0;
+    line-height: 1.75em; }
+
+  .author-meta li:before {
+    display: none; }
+
+  .older-posts,
+  .newer-posts {
+    position: static;
+    margin: 10px 0; }
+
+  .page-number {
+    display: block; }
+
+  .site-footer {
+    margin-top: 3rem; }
+
+  .author-profile {
+    padding-bottom: 2rem; }
+
+  .post-head.main-header {
+    height: 30%; }
+
+  .tag-head.main-header,
+  .author-head.main-header {
+    height: 20%; }
+
+  .author-profile .author-image {
+    margin-top: -70px; }
+
+  .author-profile .author-meta span {
+    font-size: 1.4rem; }
+
+  .archive-template .main-header .page-description {
+    display: none; }
+
+  .logo {
+    height: 100px; } }
+/* Import the font file with the icons in it */
+@font-face {
+  font-family: "casper-icons";
+  src: url("../fonts/casper-icons.eot");
+  src: url("../fonts/casper-icons.eot?#iefix") format("embedded-opentype"), url("../fonts/casper-icons.woff") format("woff"), url("../fonts/casper-icons.ttf") format("truetype"), url("../fonts/casper-icons.svg#icons") format("svg");
+  font-weight: normal;
+  font-style: normal; }
+/* Apply these base styles to all icons */
+[class^="icon-"]:before, [class*=" icon-"]:before {
+  font-family: "casper-icons", "Open Sans", sans-serif;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  text-decoration: none !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale; }
+
+/* Each icon is created by inserting the correct character into the
+   content of the :before pseudo element. Like a boss. */
+.icon-ghost:before {
+  content: "\f600"; }
+
+.icon-feed:before {
+  content: "\f601"; }
+
+.icon-twitter:before {
+  content: "\f602";
+  font-size: 1.1em; }
+
+.icon-google-plus:before {
+  content: "\f603"; }
+
+.icon-facebook:before {
+  content: "\f604"; }
+
+.icon-arrow-left:before {
+  content: "\f605"; }
+
+.icon-stats:before {
+  content: "\f606"; }
+
+.icon-location:before {
+  content: "\f607";
+  margin-left: -3px;
+  /* Tracking fix */ }
+
+.icon-link:before {
+  content: "\f608"; }
+
+/* Clears shit */
+.clearfix:before,
+.clearfix:after {
+  content: " ";
+  display: table; }
+
+.clearfix:after {
+  clear: both; }
+
+.clearfix {
+  *zoom: 1; }
+
+/* Hides shit */
+.hidden {
+  text-indent: -9999px;
+  visibility: hidden;
+  display: none; }
+
+/* Creates a responsive wrapper that makes our content scale nicely */
+.inner {
+  position: relative;
+  width: 80%;
+  margin: 0 auto; }
+
+/* Centres vertically yo. (IE8+) */
+.vertical {
+  display: table-cell;
+  vertical-align: middle; }
 
 /* Add subtle load-in animation for content on the home page */
 .home-template .page-title {
@@ -702,7 +952,7 @@ margin on the iframe, cause it breaks stuff. */
 .post {
   position: relative;
   width: 80%;
-  max-width: 710px;
+  max-width: 960px;
   margin: 4rem auto;
   padding-bottom: 4rem;
   border-bottom: #EBF2F6 1px solid;
@@ -760,6 +1010,7 @@ body:not(.post-template) .post-title {
   text-decoration: none; }
 
 .post-meta a:hover {
+  color: #e84c3c;
   text-decoration: underline; }
 
 .user-meta {
@@ -806,6 +1057,9 @@ body:not(.post-template) .post-title {
   display: block;
   font-size: 1.4rem;
   line-height: 1.5em; }
+
+.twitter-logo {
+  height: .7em; }
 
 .post-template .post-header {
   margin-bottom: 3.4rem; }
@@ -1211,304 +1465,6 @@ body:not(.post-template) .post-title {
   width: 45%;
   float: left; }
 
-@media only screen and (max-width: 900px) {
-  .main-nav {
-    padding: 15px; }
-
-  blockquote {
-    margin-left: 0; }
-
-  .main-header {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-    height: auto;
-    min-height: 240px;
-    height: 60%;
-    padding: 15% 0; }
-
-  .scroll-down,
-  .home-template .main-header:after {
-    display: none; }
-
-  .archive-template .main-header {
-    min-height: 180px;
-    padding: 10% 0; }
-
-  .blog-logo img {
-    padding: 4px 0; }
-
-  .page-title {
-    font-size: 4rem;
-    letter-spacing: -1px; }
-
-  .page-description {
-    font-size: 1.8rem;
-    line-height: 1.5em; }
-
-  .post {
-    font-size: 0.95em; }
-
-  body:not(.post-template) .post-title {
-    font-size: 3.2rem; }
-
-  hr {
-    margin: 2.4em 0; }
-
-  ol, ul {
-    padding-left: 2em; }
-
-  h1 {
-    font-size: 4.5rem;
-    text-indent: -2px; }
-
-  h2 {
-    font-size: 3.6rem; }
-
-  h3 {
-    font-size: 3.1rem; }
-
-  h4 {
-    font-size: 2.5rem; }
-
-  h5 {
-    font-size: 2.2rem; }
-
-  h6 {
-    font-size: 1.8rem; }
-
-  .author-profile {
-    padding-bottom: 4rem; }
-
-  .author-profile .author-bio {
-    font-size: 1.6rem; }
-
-  .author-meta span {
-    display: block;
-    margin: 1.5rem 0; }
-
-  .author-profile .author-meta span {
-    font-size: 1.6rem; }
-
-  .post-head.main-header {
-    height: 45%; }
-
-  .tag-head.main-header,
-  .author-head.main-header {
-    height: 30%; }
-
-  .no-cover.post-head.main-header {
-    height: 55px;
-    padding: 0; }
-
-  .no-cover.author-head.main-header {
-    padding: 0; } }
-@media only screen and (max-width: 500px) {
-  .main-header {
-    margin-bottom: 15px;
-    height: 40%; }
-
-  .no-cover.main-header {
-    height: 30%; }
-
-  .archive-template .main-header {
-    max-height: 20%;
-    min-height: 160px;
-    padding: 10% 0; }
-
-  .main-nav {
-    padding: 0;
-    margin-bottom: 2rem;
-    border-bottom: #e0e4e7 1px solid; }
-
-  .blog-logo {
-    padding: 10px 10px; }
-
-  .blog-logo img {
-    height: 26px; }
-
-  .back-button,
-  .subscribe-button {
-    height: 44px;
-    line-height: 41px;
-    border-radius: 0;
-    color: #2e2e2e;
-    background: transparent; }
-
-  .back-button:hover,
-  .subscribe-button:hover {
-    border-color: #ebeef0;
-    color: #2e2e2e;
-    background: #ebeef0; }
-
-  .back-button {
-    padding: 0 15px 0 10px; }
-
-  .subscribe-button {
-    padding: 0 12px; }
-
-  .main-nav.overlay a:hover {
-    color: #fff;
-    border-color: transparent;
-    background: transparent; }
-
-  .no-cover .main-nav.overlay {
-    background: none; }
-
-  .no-cover .main-nav.overlay .back-button,
-  .no-cover .main-nav.overlay .subscribe-button {
-    border: none; }
-
-  .main-nav.overlay .back-button,
-  .main-nav.overlay .subscribe-button {
-    border-color: transparent; }
-
-  .blog-logo img {
-    max-height: 80px; }
-
-  .inner,
-  .pagination {
-    width: auto;
-    margin: 2rem auto; }
-
-  .post {
-    width: auto;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    margin-left: 16px;
-    margin-right: 16px;
-    padding-bottom: 2rem;
-    line-height: 1.65em; }
-
-  .post-date {
-    display: none; }
-
-  .post-template .post-header {
-    margin-bottom: 2rem; }
-
-  .post-template .post-date {
-    display: inline-block; }
-
-  hr {
-    margin: 1.75em 0; }
-
-  p, ul, ol, dl {
-    font-size: 0.95em;
-    margin: 0 0 2.5rem 0; }
-
-  .page-title {
-    font-size: 3rem; }
-
-  .post-excerpt p {
-    font-size: 0.85em; }
-
-  .page-description {
-    font-size: 1.6rem; }
-
-  h1, h2, h3,
-  h4, h5, h6 {
-    margin: 0 0 0.3em 0; }
-
-  h1 {
-    font-size: 2.8rem;
-    letter-spacing: -1px; }
-
-  h2 {
-    font-size: 2.4rem;
-    letter-spacing: 0; }
-
-  h3 {
-    font-size: 2.1rem; }
-
-  h4 {
-    font-size: 1.9rem; }
-
-  h5 {
-    font-size: 1.8rem; }
-
-  h6 {
-    font-size: 1.8rem; }
-
-  body:not(.post-template) .post-title {
-    font-size: 2.5rem; }
-
-  .post-template .post {
-    padding-bottom: 0;
-    margin-bottom: 0; }
-
-  .post-template .site-footer {
-    margin-top: 0; }
-
-  .post-content img {
-    padding: 0; }
-
-  .post-content .full-img {
-    width: auto;
-    width: calc(100% + 32px);
-    /* expand with to image + margins */
-    margin: 0 -16px;
-    /* get rid of margins */
-    min-width: 0;
-    max-width: 112%;
-    /* fallback when calc doesn't work */ }
-
-  .post-meta {
-    font-size: 1.3rem;
-    margin-top: 1rem; }
-
-  .post-footer {
-    padding: 5rem 0 3rem 0;
-    text-align: center; }
-
-  .post-footer .author {
-    margin: 0 0 2rem 0;
-    padding: 0 0 1.6rem 0;
-    border-bottom: #EBF2F6 1px dashed; }
-
-  .post-footer .share {
-    position: static;
-    width: auto; }
-
-  .post-footer .share a {
-    margin: 1.4rem 0.8rem 0 0.8rem; }
-
-  .author-meta li {
-    float: none;
-    margin: 0;
-    line-height: 1.75em; }
-
-  .author-meta li:before {
-    display: none; }
-
-  .older-posts,
-  .newer-posts {
-    position: static;
-    margin: 10px 0; }
-
-  .page-number {
-    display: block; }
-
-  .site-footer {
-    margin-top: 3rem; }
-
-  .author-profile {
-    padding-bottom: 2rem; }
-
-  .post-head.main-header {
-    height: 30%; }
-
-  .tag-head.main-header,
-  .author-head.main-header {
-    height: 20%; }
-
-  .author-profile .author-image {
-    margin-top: -70px; }
-
-  .author-profile .author-meta span {
-    font-size: 1.4rem; }
-
-  .archive-template .main-header .page-description {
-    display: none; } }
 /* Used to fade in title/desc on the home page */
 @-webkit-keyframes fade-in-down {
   0% {
