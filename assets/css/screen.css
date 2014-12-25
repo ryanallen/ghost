@@ -223,7 +223,7 @@ h6 {
   font-size: 2rem; }
 
 a {
-  color: #e84c3c;
+  color: #bd350f;
   transition: color ease 0.3s; }
 
 a:hover {
@@ -1010,7 +1010,7 @@ body:not(.post-template) .post-title {
   text-decoration: none; }
 
 .post-meta a:hover {
-  color: #e84c3c;
+  color: #bd350f;
   text-decoration: underline; }
 
 .user-meta {
